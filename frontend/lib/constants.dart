@@ -7,7 +7,7 @@ import 'package:frontend/view/pages/settings/settings.dart';
 List pages = [
   FeedScreen(),
   FilterScreen(),
-  CameraScreen(),
+  const CameraScreen(),
   ProfileScreen(),
   SettingsScreen(),
 ];

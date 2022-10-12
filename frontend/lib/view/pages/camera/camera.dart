@@ -11,7 +11,10 @@ class CameraScreen extends StatelessWidget {
     if (video != null) {
       Navigator.of(context).push(
         MaterialPageRoute(
-          builder: (context) => ConfirmScreen(),
+          builder: (context) => ConfirmScreen(
+            videoFile: File(video.path),
+            videoPath: video.path,
+          ),
         ),
       );
     }
@@ -30,12 +33,12 @@ class CameraScreen extends StatelessWidget {
           children: [
             FloatingActionButton(
               backgroundColor: const Color.fromARGB(0, 0, 0, 0),
-              onPressed: (){},
+              onPressed: () => pickVideo(ImageSource.gallery, context),
               child: const Icon(Icons.file_upload_outlined, color: Colors.white,),
             ),
             FloatingActionButton(
               backgroundColor: const Color.fromARGB(0, 0, 0, 0),
-              onPressed: (){},
+              onPressed: () => pickVideo(ImageSource.camera, context),
               child: const Icon(Icons.video_camera_back, color: Colors.white,),
             ),
             FloatingActionButton(

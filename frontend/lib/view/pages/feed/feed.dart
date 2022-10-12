@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:frontend/controller/google_sign_in.dart';
+import 'package:provider/provider.dart';
 
 class FeedScreen extends StatefulWidget {
-  FeedScreen({Key? key}) : super(key: key);
+  const FeedScreen({Key? key}) : super(key: key);
 
   @override
   State<FeedScreen> createState() => _FeedScreenState();
@@ -10,8 +12,21 @@ class FeedScreen extends StatefulWidget {
 class _FeedScreenState extends State<FeedScreen> {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text('Feed'),
+    return Scaffold(
+      body: const Center(
+        child: Text('Feed'),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
+      floatingActionButton: Padding(
+        padding: const EdgeInsets.all(5),
+        child: FloatingActionButton(
+          child: const Icon(Icons.person),
+          onPressed: () {
+            final provider = Provider.of<GoogleSignInController>(context, listen: false);
+            provider.googleLogin();
+          },
+        ),
+      ),
     );
   }
 }

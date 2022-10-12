@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">561862285282-vr5cf97a2km9tgkufe665rqev47jdfva.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">561862285282</string>
+    <string name="google_api_key" translatable="false">AIzaSyAZ1caUZDgc4kqiXcbiupnPlLCPra8rYJA</string>
+    <string name="google_app_id" translatable="false">1:561862285282:android:a5078c6e985b718b304bbb</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyAZ1caUZDgc4kqiXcbiupnPlLCPra8rYJA</string>
+    <string name="google_storage_bucket" translatable="false">eatfeeddb.appspot.com</string>
+    <string name="project_id" translatable="false">eatfeeddb</string>
+</resources>

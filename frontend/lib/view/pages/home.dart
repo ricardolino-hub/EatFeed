@@ -24,11 +24,11 @@ class _HomeState extends State<Home> {
           currentIndex: _pageIdx,
           type: BottomNavigationBarType.fixed,
           items: const [
-            BottomNavigationBarItem(icon: Icon(Icons.home)),
-            BottomNavigationBarItem(icon: Icon(Icons.filter_alt)),
-            BottomNavigationBarItem(icon: Icon(Icons.linked_camera)),
-            BottomNavigationBarItem(icon: Icon(Icons.person_sharp)),
-            BottomNavigationBarItem(icon: Icon(Icons.settings_sharp)),
+            BottomNavigationBarItem(icon: Icon(Icons.home),label: ''),
+            BottomNavigationBarItem(icon: Icon(Icons.filter_alt),label: ''),
+            BottomNavigationBarItem(icon: Icon(Icons.linked_camera),label: ''),
+            BottomNavigationBarItem(icon: Icon(Icons.person_sharp),label: ''),
+            BottomNavigationBarItem(icon: Icon(Icons.settings_sharp),label: ''),
           ]),
     );
   }
