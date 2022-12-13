@@ -1,6 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:frontend/constants.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+
+import '../model/user.dart';
 
 class GoogleSignInController extends ChangeNotifier {
   final googleSignIn = GoogleSignIn();
@@ -21,7 +24,18 @@ class GoogleSignInController extends ChangeNotifier {
       idToken: googleAuth.idToken,
     );
 
-    await FirebaseAuth.instance.signInWithCredential(credential);
+    await firebaseAuth.signInWithCredential(credential);
+
+    UserModel userModel = UserModel(
+        name: user.displayName!,
+        profilePhoto: user.photoUrl!,
+        email: user.email,
+        uid: credential.toString());
+
+    print(
+        'name: ${userModel.name} / profilePhoto: ${userModel.profilePhoto} / email: ${userModel.email}');
+
+    firestore.collection('users').doc(userModel.uid).set(userModel.toJson());
 
     notifyListeners();
   }

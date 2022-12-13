@@ -12,6 +12,7 @@ class FeedScreen extends StatefulWidget {
 class _FeedScreenState extends State<FeedScreen> {
   @override
   Widget build(BuildContext context) {
+    final provider = Provider.of<GoogleSignInController>(context, listen: false);
     return Scaffold(
       body: const Center(
         child: Text('Feed'),
@@ -22,7 +23,6 @@ class _FeedScreenState extends State<FeedScreen> {
         child: FloatingActionButton(
           child: const Icon(Icons.person),
           onPressed: () {
-            final provider = Provider.of<GoogleSignInController>(context, listen: false);
             provider.googleLogin();
           },
         ),
